@@ -20,7 +20,7 @@ async fn upload(mut upload: Form<Upload<'_>>) -> String {
     let file_name = upload.file.name().unwrap().to_string();
 
     // Set path name
-    let path = format!("/home/audrey/Downloads/{}", file_name);
+    let path = format!("/your/path/here/{}", file_name);
 
     // Set the path reference with '&', because when we set this variable here, its moved
     let result = upload.file.persist_to(&path).await;
